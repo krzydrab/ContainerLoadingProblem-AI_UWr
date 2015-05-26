@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ContainerLoadingProblem-AI_UWr", "ContainerLoadingProblem-AI_UWr.vcxproj", "{562E4ED0-C082-4DBF-BED9-C0A4499003BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{562E4ED0-C082-4DBF-BED9-C0A4499003BC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{562E4ED0-C082-4DBF-BED9-C0A4499003BC}.Debug|Win32.Build.0 = Debug|Win32
+		{562E4ED0-C082-4DBF-BED9-C0A4499003BC}.Release|Win32.ActiveCfg = Release|Win32
+		{562E4ED0-C082-4DBF-BED9-C0A4499003BC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
