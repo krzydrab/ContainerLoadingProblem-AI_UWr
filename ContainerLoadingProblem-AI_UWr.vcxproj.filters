@@ -24,5 +24,19 @@
     <ClCompile Include="Source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ContainerLoading\Utils\Package.cpp">
+      <Filter>Source Files\ContainerLoading\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ContainerLoading\Utils\Dimensions.cpp">
+      <Filter>Source Files\ContainerLoading\Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\ContainerLoading\Utils\Package.h">
+      <Filter>Source Files\ContainerLoading\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContainerLoading\Utils\Dimensions.h">
+      <Filter>Source Files\ContainerLoading\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
