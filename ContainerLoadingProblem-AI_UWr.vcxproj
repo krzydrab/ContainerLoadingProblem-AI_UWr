@@ -79,11 +79,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\ContainerLoading\PackageGenerator.cpp" />
     <ClCompile Include="Source\ContainerLoading\Utils\Dimensions.cpp" />
     <ClCompile Include="Source\ContainerLoading\Utils\Package.cpp" />
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\ContainerLoading\IPackageGenerator.h" />
+    <ClInclude Include="Source\ContainerLoading\PackageGenerator.h" />
     <ClInclude Include="Source\ContainerLoading\Utils\Dimensions.h" />
     <ClInclude Include="Source\ContainerLoading\Utils\Package.h" />
   </ItemGroup>
