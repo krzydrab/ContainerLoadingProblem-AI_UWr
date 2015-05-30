@@ -33,6 +33,9 @@
     <ClCompile Include="Source\ContainerLoading\PackageGenerator.cpp">
       <Filter>Source Files\ContainerLoading</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ContainerLoading\Utils\Layer.cpp">
+      <Filter>Source Files\ContainerLoading\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ContainerLoading\Utils\Package.h">
@@ -46,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="Source\ContainerLoading\IPackageGenerator.h">
       <Filter>Source Files\ContainerLoading</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContainerLoading\Utils\Layer.h">
+      <Filter>Source Files\ContainerLoading\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
