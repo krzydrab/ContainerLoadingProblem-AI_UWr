@@ -16,6 +16,7 @@ namespace ContainerLoading
             Package(const Dimensions dimensions, const glm::vec3 position = glm::vec3(.0f, .0f, .0f));
 
             bool intersect(const Package& package) const;
+            bool layAbove(const Package& package) const;
 
         public:
             glm::vec3 getPosition() const;

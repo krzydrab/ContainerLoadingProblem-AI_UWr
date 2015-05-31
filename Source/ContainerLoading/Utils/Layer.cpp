@@ -8,6 +8,7 @@ namespace ContainerLoading
         {
             _containerDimensions = containerDimensions;
             _position = layerPosition;
+            _packagesCapacity = .0f;
 
             _topSections.insert(Section(.0f, _containerDimensions.length, .0f));
         }
@@ -30,7 +31,20 @@ namespace ContainerLoading
 
         Utils::Package Layer::takeRandomTopPackage()
         {
-            return Utils::Package(Utils::Dimensions(0,0,0));
+            std::vector<PackageIter> packages = getTopPackages();
+            PackageIter it = packages[rand() % packages.size()];
+            PackageIter last = --_packages.end();
+            std::iter_swap(it, last);
+
+            Utils::Package res = *last;
+            _packages.pop_back();
+
+            SectionIter section = _topSections.lower_bound(Section(res.getPosition().z - _position.z));
+            
+            removeFromSection(res, section);
+            joinSectionsOfEqualHeights();
+
+            return res;
         }
 
         std::vector<Utils::Package> Layer::getPackages() const
@@ -45,7 +59,29 @@ namespace ContainerLoading
 
         std::vector<Layer::PackageIter> Layer::getTopPackages()
         {
-            return std::vector<Layer::PackageIter>();
+            std::vector<PackageIter> res;
+
+            for(Layer::PackageIter it = _packages.begin() ; it != _packages.end() ; it++)
+                if(isTopPackage(*it))
+                    res.push_back(it);
+
+            return res;
+        }
+
+        bool Layer::isTopPackage(const Utils::Package& package)
+        {
+            glm::vec3 pos1 = package.getPosition();
+
+            for(Utils::Package& p : _packages)
+            {
+                glm::vec3 pos2 = p.getPosition();
+                if(p.layAbove(package))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         void Layer::joinSectionsOfEqualHeights()
@@ -103,6 +139,25 @@ namespace ContainerLoading
                     section->height)
                 );
             }
+
+            _topSections.erase(section);
+        }
+
+        void Layer::removeFromSection(const Utils::Package& package, SectionIter section)
+        {
+            Section packageSection(
+                package.getPosition().z - _position.z,
+                package.getPosition().z - _position.z + package.getDimensions().length,
+                package.getPosition().y - _position.y
+            );
+            
+            _topSections.insert(packageSection);
+            
+            if(section->left != packageSection.left)
+                _topSections.insert(Section(section->left, packageSection.left, section->height));
+
+            if(section->right != packageSection.right)
+                _topSections.insert(Section(packageSection.right, section->right, section->height));            
 
             _topSections.erase(section);
         }

@@ -19,7 +19,7 @@ namespace ContainerLoading
             std::vector<Utils::Package> getPackages() const;
             glm::float32 spaceFilledByPackages() const;
 
-        private:
+        public:
             struct Section
             {
                 glm::float32 left, right, height;
@@ -49,12 +49,14 @@ namespace ContainerLoading
             typedef std::vector<Utils::Package>::iterator PackageIter;
             typedef std::set<Section, SectionCmp>::iterator SectionIter;
 
-        private:
+        public:
             std::vector<PackageIter> getTopPackages();
+            bool isTopPackage(const Utils::Package& package);
             void joinSectionsOfEqualHeights();
             bool fitInSection(const Utils::Package& package, SectionIter section) const;
             void insertInSection(const Utils::Package& package, SectionIter section);
             void splitSection(const Utils::Package& package, SectionIter section);
+            void removeFromSection(const Utils::Package& package, SectionIter section);
 
             std::set<Section, SectionCmp> _topSections; 
             std::vector<Utils::Package> _packages;
