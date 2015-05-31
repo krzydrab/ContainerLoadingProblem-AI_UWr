@@ -10,7 +10,6 @@ namespace Visualisation
 {
     namespace Engine
     {
-
         class Camera
         {
         public:
@@ -24,31 +23,13 @@ namespace Visualisation
             GLuint get_projection_location();
 
             void compute_orientation(double x_pos, double y_pos);
-            void move_left(GLfloat delta_time);
-            void move_right(GLfloat delta_time);
-            void move_left2(GLfloat delta_time);
-            void move_right2(GLfloat delta_time);
-            void move_forward(GLfloat delta_time);
-            void move_backward(GLfloat delta_time);
-            void move_up(GLfloat delta_time);
-            void move_down(GLfloat delta_time);
-            void fix_position(glm::vec3 fix_vector);
             void zoom_in(GLfloat delta_time);
             void zoom_out(GLfloat delta_time);
             void rotate_left(GLfloat delta_time);
             void rotate_right(GLfloat delta_time);
-            void rotate_up(GLfloat delta_time);
-            void rotate_down(GLfloat delta_time);
-
             glm::vec3 get_position();
             void uniform_position();
-            void set_position(glm::vec3 n_position);
-            void set_direction(glm::vec3 n_direction);
-            void set_up(glm::vec3 n_up);
-            void set_speed(float n_speed);
-            void reset_speed();
-
-
+            glm::mat4& getModelMatrix();
 
         private:
             glm::mat4 Projection;
@@ -71,9 +52,8 @@ namespace Visualisation
             float verticalAngle;
             float FoV;
 
-            float speed;
-            float mouseSpeed;
-
+            //float speed;
+            //float mouseSpeed;
             GLfloat zoom_per_second;
         };
     }

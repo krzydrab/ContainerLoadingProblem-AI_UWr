@@ -90,5 +90,14 @@ namespace Visualisation
             return glfwGetKey(_window, GLFW_KEY_3);
         }
 
+        int Window::checkLeftKey()
+        {
+            return glfwGetKey(_window, GLFW_KEY_LEFT);
+        }
+
+        int Window::checkRightKey()
+        {
+            return glfwGetKey(_window, GLFW_KEY_RIGHT);
+        }
     }
 }

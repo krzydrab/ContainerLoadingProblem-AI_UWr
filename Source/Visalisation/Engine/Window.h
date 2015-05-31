@@ -25,6 +25,9 @@ namespace Visualisation
             int check1Key();
             int check2Key();
             int check3Key();
+            int checkLeftKey();
+            int checkRightKey();
+            
 
         private:
             int _width;

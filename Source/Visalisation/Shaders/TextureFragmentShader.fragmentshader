@@ -1,0 +1,57 @@
+#version 330 core
+
+uniform mat4 Model;
+uniform vec3 cameraPosition;
+float materialShininess;
+
+vec3 sunLightPosition;
+vec3 sunLightIntensities;
+float sunLightAmbientCoefficient;
+float sunLightAttenuation;
+
+// Interpolated values from the vertex shaders
+in vec3 fragmentColor;
+in vec3 fragmentNormal;
+in vec3 fragmentVertexPosition;
+
+// Ouput data
+out vec3 finalColor;
+
+void main(){
+    sunLightPosition = vec3(0.0f, 7.0f, 20.0f);
+    sunLightIntensities = vec3(1.0f, 1.0f, 1.0f);
+    sunLightAmbientCoefficient = 0.5f;
+    sunLightAttenuation = 1.0f;
+        
+    materialShininess = 5.0f;
+    
+    //calculate normal in world coordinates
+    vec3 normal = normalize(transpose(inverse(mat3(Model))) * fragmentNormal);
+    
+    //calculate the location of this fragment (pixel) in world coordinates
+    vec3 surfacePosition = vec3(Model * vec4(fragmentVertexPosition, 1));
+    
+    //calculate the vector from this pixels surface to the sunLight source
+    vec3 surfaceTosunLight = normalize(sunLightPosition - surfacePosition);
+        
+    //calculate the vector from this pixels surface to the camera
+    vec3 surfaceToCamera = normalize(cameraPosition - surfacePosition);
+     
+    
+    //ambient
+    vec3 sunAmbient = sunLightAmbientCoefficient * sunLightIntensities * fragmentColor;
+
+    //diffuse
+    float sunDiffuseCoefficient = max(0.0f, dot(normal, surfaceTosunLight));
+    vec3 sunDiffuse = sunDiffuseCoefficient * sunLightIntensities * fragmentColor;
+
+    //specular
+    float sunSpecularCoefficient = 0.0f;
+    if(sunDiffuseCoefficient > 0.0f)
+        sunSpecularCoefficient = pow(max(0.0f, dot(surfaceToCamera, reflect(-surfaceTosunLight, normal))), materialShininess);
+    vec3 sunSpecular = sunSpecularCoefficient * sunLightIntensities * fragmentColor;
+    
+    vec3 sunLightColor = sunAmbient + sunLightAttenuation * (sunDiffuse + sunSpecular);
+    
+    finalColor = sunLightColor;
+}

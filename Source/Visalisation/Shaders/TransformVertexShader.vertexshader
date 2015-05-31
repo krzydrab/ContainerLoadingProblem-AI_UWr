@@ -1,0 +1,27 @@
+#version 330 core
+
+uniform mat4 Model;
+uniform mat4 View;
+uniform mat4 Projection;
+uniform vec3 color;
+
+// Input vertex data, different for all executions of this shader.
+layout(location = 0) in vec3 vertexPosition_modelspace;
+//layout(location = 1) in vec3 vertexColor;
+layout(location = 2) in vec3 vertexNormal;
+
+// Output data ; will be interpolated for each fragment.
+out vec3 fragmentColor;
+out vec3 fragmentNormal;
+out vec3 fragmentVertexPosition;
+
+void main(){
+
+    gl_Position =  Projection * View * Model * vec4(vertexPosition_modelspace,1);
+    
+    fragmentColor = color;
+	//fragmentColor = vertexColor;
+    fragmentNormal = vertexNormal;
+    fragmentVertexPosition = vertexPosition_modelspace;
+}
+
