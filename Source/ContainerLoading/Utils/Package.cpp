@@ -23,6 +23,18 @@ namespace ContainerLoading
                 _position.z < package._position.z + package._dimensions.length);
         }
 
+        bool Package::layAbove(const Package& package) const
+        {
+            return 
+                (_position.x + _dimensions.width > package._position.x &&
+                _position.x < package._position.x + package._dimensions.width)
+            && 
+                (_position.y >= package._position.y + package._dimensions.height)
+            &&
+                (_position.z + _dimensions.length > package._position.z &&
+                _position.z < package._position.z + package._dimensions.length);
+        }
+
         glm::vec3 Package::getPosition() const
         {
             return _position;

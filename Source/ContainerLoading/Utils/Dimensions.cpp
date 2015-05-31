@@ -20,5 +20,10 @@ namespace ContainerLoading
         {
             return glm::vec3(width, height, length);
         }
+
+        glm::float32 Dimensions::capacity() const
+        {
+            return width*height*length;
+        }
     }
 }

@@ -51,6 +51,9 @@
     <ClCompile Include="Source\ContainerLoading\Algorithm\ConstructionAlgorithm.cpp">
       <Filter>Source Files\ContainerLoading\Algotithm</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ContainerLoading\Algorithm\SimulatedAnnealing.cpp">
+      <Filter>Source Files\ContainerLoading\Algotithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ContainerLoading\Utils\Package.h">
@@ -78,6 +81,12 @@
       <Filter>Source Files\ContainerLoading\Algotithm</Filter>
     </ClInclude>
     <ClInclude Include="Source\ContainerLoading\Algorithm\ConstructionAlgorithm.h">
+      <Filter>Source Files\ContainerLoading\Algotithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContainerLoading\Algorithm\SimulatedAnnealing.h">
+      <Filter>Source Files\ContainerLoading\Algotithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContainerLoading\Algorithm\AcceptanceFunction.h">
       <Filter>Source Files\ContainerLoading\Algotithm</Filter>
     </ClInclude>
   </ItemGroup>
