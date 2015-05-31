@@ -40,4 +40,9 @@ namespace ContainerLoading
     {
         return _packages;
     }
+
+    void ContainerLoader::applyAlgorithm(Algorithm::IAlgorithm* algorithm)
+    {
+        _algorithm = algorithm;
+    }
 }

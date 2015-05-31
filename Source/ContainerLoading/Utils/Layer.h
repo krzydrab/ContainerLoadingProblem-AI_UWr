@@ -18,7 +18,7 @@ namespace ContainerLoading
             Utils::Package takeRandomTopPackage();
             std::vector<Utils::Package> getPackages() const;
 
-        public:
+        private:
             struct Section
             {
                 glm::float32 left, right, height;
@@ -48,7 +48,7 @@ namespace ContainerLoading
             typedef std::vector<Utils::Package>::iterator PackageIter;
             typedef std::set<Section, SectionCmp>::iterator SectionIter;
 
-        public:
+        private:
             std::vector<PackageIter> getTopPackages();
             void joinSectionsOfEqualHeights();
             bool fitInSection(const Utils::Package& package, SectionIter section) const;
