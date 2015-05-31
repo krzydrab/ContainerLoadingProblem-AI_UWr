@@ -19,6 +19,7 @@ namespace ContainerLoading
             std::vector<Layer>& getLayers();
             Dimensions getDimensions() const;
             glm::vec3 getPosition() const;
+            glm::float32 getFreeSpace() const;
 
         private:
             std::vector<Layer> _layers;

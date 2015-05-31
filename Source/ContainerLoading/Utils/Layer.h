@@ -17,6 +17,7 @@ namespace ContainerLoading
             bool tryPut(const Utils::Package& package);
             Utils::Package takeRandomTopPackage();
             std::vector<Utils::Package> getPackages() const;
+            glm::float32 spaceFilledByPackages() const;
 
         private:
             struct Section
@@ -59,6 +60,7 @@ namespace ContainerLoading
             std::vector<Utils::Package> _packages;
             Utils::Dimensions _containerDimensions;
             glm::vec3 _position;
+            glm::float32 _packagesCapacity;
         };
     }
 }

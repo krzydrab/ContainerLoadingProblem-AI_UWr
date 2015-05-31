@@ -38,6 +38,11 @@ namespace ContainerLoading
             return _packages;
         }
 
+        glm::float32 Layer::spaceFilledByPackages() const
+        {
+            return _packagesCapacity;
+        }
+
         std::vector<Layer::PackageIter> Layer::getTopPackages()
         {
             return std::vector<Layer::PackageIter>();
@@ -78,6 +83,7 @@ namespace ContainerLoading
             Utils::Package p = package;
             p.setPosition(_position + glm::vec3(.0f, section->height, section->left));
             _packages.push_back(p);
+            _packagesCapacity += p.getDimensions().capacity();
 
             splitSection(package, section);
         }
