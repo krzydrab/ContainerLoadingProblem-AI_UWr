@@ -80,6 +80,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\ContainerLoading\PackageGenerator.cpp" />
+    <ClCompile Include="Source\ContainerLoading\Utils\Container.cpp" />
     <ClCompile Include="Source\ContainerLoading\Utils\Dimensions.cpp" />
     <ClCompile Include="Source\ContainerLoading\Utils\Layer.cpp" />
     <ClCompile Include="Source\ContainerLoading\Utils\Package.cpp" />
@@ -88,6 +89,7 @@
   <ItemGroup>
     <ClInclude Include="Source\ContainerLoading\IPackageGenerator.h" />
     <ClInclude Include="Source\ContainerLoading\PackageGenerator.h" />
+    <ClInclude Include="Source\ContainerLoading\Utils\Container.h" />
     <ClInclude Include="Source\ContainerLoading\Utils\Dimensions.h" />
     <ClInclude Include="Source\ContainerLoading\Utils\Layer.h" />
     <ClInclude Include="Source\ContainerLoading\Utils\Package.h" />

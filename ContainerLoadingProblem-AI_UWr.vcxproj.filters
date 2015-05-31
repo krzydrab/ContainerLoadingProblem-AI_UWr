@@ -36,6 +36,9 @@
     <ClCompile Include="Source\ContainerLoading\Utils\Layer.cpp">
       <Filter>Source Files\ContainerLoading\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ContainerLoading\Utils\Container.cpp">
+      <Filter>Source Files\ContainerLoading\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ContainerLoading\Utils\Package.h">
@@ -51,6 +54,9 @@
       <Filter>Source Files\ContainerLoading</Filter>
     </ClInclude>
     <ClInclude Include="Source\ContainerLoading\Utils\Layer.h">
+      <Filter>Source Files\ContainerLoading\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContainerLoading\Utils\Container.h">
       <Filter>Source Files\ContainerLoading\Utils</Filter>
     </ClInclude>
   </ItemGroup>
