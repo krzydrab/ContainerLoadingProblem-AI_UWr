@@ -15,7 +15,7 @@ namespace ContainerLoading
 
             virtual bool run(int steps) = 0;
 
-        private:
+        protected:
             Utils::Container& _container;
             std::vector<Utils::Package>& _packages;
         };

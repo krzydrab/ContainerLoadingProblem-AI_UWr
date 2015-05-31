@@ -19,6 +19,9 @@
     <Filter Include="Source Files\ContainerLoading\Utils">
       <UniqueIdentifier>{294ec348-9f2b-408c-bee6-da9bbcf1df0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ContainerLoading\Algotithm">
+      <UniqueIdentifier>{2a7ef4ed-7cc4-45f8-82d9-92733eeb43e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -39,6 +42,15 @@
     <ClCompile Include="Source\ContainerLoading\Utils\Container.cpp">
       <Filter>Source Files\ContainerLoading\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ContainerLoading\Algorithm\IAlgorithm.cpp">
+      <Filter>Source Files\ContainerLoading\Algotithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ContainerLoading\ContainerLoader.cpp">
+      <Filter>Source Files\ContainerLoading</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ContainerLoading\Algorithm\ConstructionAlgorithm.cpp">
+      <Filter>Source Files\ContainerLoading\Algotithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ContainerLoading\Utils\Package.h">
@@ -58,6 +70,15 @@
     </ClInclude>
     <ClInclude Include="Source\ContainerLoading\Utils\Container.h">
       <Filter>Source Files\ContainerLoading\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContainerLoading\ContainerLoader.h">
+      <Filter>Source Files\ContainerLoading</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContainerLoading\Algorithm\IAlgorithm.h">
+      <Filter>Source Files\ContainerLoading\Algotithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContainerLoading\Algorithm\ConstructionAlgorithm.h">
+      <Filter>Source Files\ContainerLoading\Algotithm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
