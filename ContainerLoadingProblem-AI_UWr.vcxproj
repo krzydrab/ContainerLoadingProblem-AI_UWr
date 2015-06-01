@@ -83,6 +83,7 @@
     <ClCompile Include="Source\ContainerLoading\Algorithm\ConstructionAlgorithm.cpp" />
     <ClCompile Include="Source\ContainerLoading\Algorithm\IAlgorithm.cpp" />
     <ClCompile Include="Source\ContainerLoading\Algorithm\SimulatedAnnealing.cpp" />
+    <ClCompile Include="Source\ContainerLoading\Algorithm\TabuSearch.cpp" />
     <ClCompile Include="Source\ContainerLoading\ContainerLoader.cpp" />
     <ClCompile Include="Source\ContainerLoading\PackageGenerator.cpp" />
     <ClCompile Include="Source\ContainerLoading\Utils\Container.cpp" />
@@ -102,6 +103,7 @@
     <ClInclude Include="Source\ContainerLoading\Algorithm\CoolingSchedule.h" />
     <ClInclude Include="Source\ContainerLoading\Algorithm\IAlgorithm.h" />
     <ClInclude Include="Source\ContainerLoading\Algorithm\SimulatedAnnealing.h" />
+    <ClInclude Include="Source\ContainerLoading\Algorithm\TabuSearch.h" />
     <ClInclude Include="Source\ContainerLoading\ContainerLoader.h" />
     <ClInclude Include="Source\ContainerLoading\IPackageGenerator.h" />
     <ClInclude Include="Source\ContainerLoading\PackageGenerator.h" />

@@ -4,6 +4,7 @@
 #include "../ContainerLoading/Algorithm/ConstructionAlgorithm.h"
 #include "../ContainerLoading/Algorithm/SimulatedAnnealing.h"
 #include "../ContainerLoading/Algorithm/CoolingSchedule.h"
+#include "../ContainerLoading/Algorithm/TabuSearch.h"
 
 #include <iostream>
 
@@ -112,7 +113,8 @@ namespace Visualisation
 
         if (main_window->check3Key())
         {
-            //algo 3
+            initContainer();
+            loader->applyAlgorithm(new Algorithm::TabuSearch(loader->getContainer(), loader->getPackages()));
         }
 
         if (main_window->checkUpKey() && !pressed)

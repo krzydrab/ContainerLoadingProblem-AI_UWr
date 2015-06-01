@@ -84,6 +84,9 @@
     <ClCompile Include="Source\Visalisation\Engine\Window.cpp">
       <Filter>Source Files\Visualization\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ContainerLoading\Algorithm\TabuSearch.cpp">
+      <Filter>Source Files\ContainerLoading\Algotithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ContainerLoading\Utils\Package.h">
@@ -139,6 +142,9 @@
     </ClInclude>
     <ClInclude Include="Source\Visalisation\Engine\Window.h">
       <Filter>Source Files\Visualization\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ContainerLoading\Algorithm\TabuSearch.h">
+      <Filter>Source Files\ContainerLoading\Algotithm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
