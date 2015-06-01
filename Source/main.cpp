@@ -1,20 +1,15 @@
 #include <iostream>
-
-#include "Visalisation\Visualisation.h"
-
 #include <cstdlib>
 #include <ctime>
 
+#include "Visalisation/Visualisation.h"
+
 int main()
 {
-    srand(time(NULL));
-
-    std::cout << "Initial hello world" << std::endl;
+    srand(static_cast<unsigned>(time(NULL)));
 
     Visualisation::Visualisation visualisation;
-
     visualisation.start();
-
 
     return 0;
 }

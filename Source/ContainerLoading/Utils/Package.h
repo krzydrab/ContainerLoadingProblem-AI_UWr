@@ -21,12 +21,14 @@ namespace ContainerLoading
         public:
             glm::vec3 getPosition() const;
             const Dimensions& getDimensions() const;
+            glm::vec3 getColor() const;
 
             void setPosition(const glm::vec3 pos);
             void setDimensions(const Dimensions dimensions);
 
         private:
             glm::vec3 _position;
+            glm::vec3 _color;
             Dimensions _dimensions;
         };
     }

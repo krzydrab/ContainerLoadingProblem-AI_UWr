@@ -22,6 +22,18 @@
     <Filter Include="Source Files\ContainerLoading\Algotithm">
       <UniqueIdentifier>{2a7ef4ed-7cc4-45f8-82d9-92733eeb43e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Visualization">
+      <UniqueIdentifier>{480e6e75-e37e-4a2e-9e73-b34a2b531d00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Visualization\Engine">
+      <UniqueIdentifier>{14c1b33f-47a4-47b1-a1e0-9bed18714b36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Visualization\Model">
+      <UniqueIdentifier>{4194fc7d-179e-4611-ba85-eb53b29dc5e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Visualization\Shaders">
+      <UniqueIdentifier>{547a43ba-b49b-4df8-b636-0aab41d510c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -53,6 +65,24 @@
     </ClCompile>
     <ClCompile Include="Source\ContainerLoading\Algorithm\SimulatedAnnealing.cpp">
       <Filter>Source Files\ContainerLoading\Algotithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Visalisation\Visualisation.cpp">
+      <Filter>Source Files\Visualization</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Visalisation\Model\Cube.cpp">
+      <Filter>Source Files\Visualization\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Visalisation\Engine\Camera.cpp">
+      <Filter>Source Files\Visualization\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Visalisation\Engine\Render.cpp">
+      <Filter>Source Files\Visualization\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Visalisation\Engine\Shader.cpp">
+      <Filter>Source Files\Visualization\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Visalisation\Engine\Window.cpp">
+      <Filter>Source Files\Visualization\Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,8 +116,37 @@
     <ClInclude Include="Source\ContainerLoading\Algorithm\SimulatedAnnealing.h">
       <Filter>Source Files\ContainerLoading\Algotithm</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ContainerLoading\Algorithm\AcceptanceFunction.h">
+    <ClInclude Include="Source\ContainerLoading\Algorithm\CoolingSchedule.h">
       <Filter>Source Files\ContainerLoading\Algotithm</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Visalisation\Visualisation.h">
+      <Filter>Source Files\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Visalisation\Model\Cube.h">
+      <Filter>Source Files\Visualization\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Visalisation\Engine\Camera.h">
+      <Filter>Source Files\Visualization\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Visalisation\Engine\Render.h">
+      <Filter>Source Files\Visualization\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Visalisation\Engine\Shader.h">
+      <Filter>Source Files\Visualization\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Visalisation\Engine\Visualisation.h">
+      <Filter>Source Files\Visualization\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Visalisation\Engine\Window.h">
+      <Filter>Source Files\Visualization\Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Visalisation\Shaders\TextureFragmentShader.fragmentshader">
+      <Filter>Source Files\Visualization\Shaders</Filter>
+    </None>
+    <None Include="Source\Visalisation\Shaders\TransformVertexShader.vertexshader">
+      <Filter>Source Files\Visualization\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

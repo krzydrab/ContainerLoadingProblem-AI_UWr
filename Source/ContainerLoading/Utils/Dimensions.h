@@ -14,7 +14,7 @@ namespace ContainerLoading
             Dimensions();
             Dimensions(const glm::float32 width, const glm::float32 height, const glm::float32 length);
         
-            glm::vec3 asVec3();
+            glm::vec3 asVec3() const;
             glm::float32 capacity() const;
 
         public:

@@ -16,7 +16,7 @@ namespace ContainerLoading
             width = height = length = 0;
         }
 
-        glm::vec3 Dimensions::asVec3()
+        glm::vec3 Dimensions::asVec3() const
         {
             return glm::vec3(width, height, length);
         }

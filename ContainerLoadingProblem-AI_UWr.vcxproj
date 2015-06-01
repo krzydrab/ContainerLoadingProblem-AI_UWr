@@ -41,6 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)/Libs;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -89,10 +90,16 @@
     <ClCompile Include="Source\ContainerLoading\Utils\Layer.cpp" />
     <ClCompile Include="Source\ContainerLoading\Utils\Package.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Visalisation\Engine\Camera.cpp" />
+    <ClCompile Include="Source\Visalisation\Engine\Render.cpp" />
+    <ClCompile Include="Source\Visalisation\Engine\Shader.cpp" />
+    <ClCompile Include="Source\Visalisation\Engine\Window.cpp" />
+    <ClCompile Include="Source\Visalisation\Model\Cube.cpp" />
+    <ClCompile Include="Source\Visalisation\Visualisation.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\ContainerLoading\Algorithm\AcceptanceFunction.h" />
     <ClInclude Include="Source\ContainerLoading\Algorithm\ConstructionAlgorithm.h" />
+    <ClInclude Include="Source\ContainerLoading\Algorithm\CoolingSchedule.h" />
     <ClInclude Include="Source\ContainerLoading\Algorithm\IAlgorithm.h" />
     <ClInclude Include="Source\ContainerLoading\Algorithm\SimulatedAnnealing.h" />
     <ClInclude Include="Source\ContainerLoading\ContainerLoader.h" />
@@ -102,6 +109,17 @@
     <ClInclude Include="Source\ContainerLoading\Utils\Dimensions.h" />
     <ClInclude Include="Source\ContainerLoading\Utils\Layer.h" />
     <ClInclude Include="Source\ContainerLoading\Utils\Package.h" />
+    <ClInclude Include="Source\Visalisation\Engine\Camera.h" />
+    <ClInclude Include="Source\Visalisation\Engine\Render.h" />
+    <ClInclude Include="Source\Visalisation\Engine\Shader.h" />
+    <ClInclude Include="Source\Visalisation\Engine\Visualisation.h" />
+    <ClInclude Include="Source\Visalisation\Engine\Window.h" />
+    <ClInclude Include="Source\Visalisation\Model\Cube.h" />
+    <ClInclude Include="Source\Visalisation\Visualisation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Visalisation\Shaders\TextureFragmentShader.fragmentshader" />
+    <None Include="Source\Visalisation\Shaders\TransformVertexShader.vertexshader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,5 @@
 #include "Package.h"
+#include <GL/glew.h>
 
 namespace ContainerLoading
 {
@@ -8,6 +9,8 @@ namespace ContainerLoading
         {
             _dimensions = dimensions;
             _position = position;
+
+            _color = glm::vec3 ((GLfloat)rand() / (RAND_MAX), (GLfloat)rand() / (RAND_MAX), (GLfloat)rand() / (RAND_MAX));
         }
 
         bool Package::intersect(const Package& package) const
@@ -43,6 +46,11 @@ namespace ContainerLoading
         const Dimensions& Package::getDimensions() const
         {
             return _dimensions;
+        }
+
+        glm::vec3 Package::getColor() const
+        {
+            return _color;
         }
 
         void Package::setPosition(const glm::vec3 pos)
