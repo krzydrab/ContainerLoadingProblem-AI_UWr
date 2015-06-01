@@ -15,14 +15,17 @@ namespace Visualisation
         Visualisation();
         ~Visualisation();
         void start();
+        void printResulst() const;
 
     private:
+        void check_input(GLfloat delta_time);
+        void initContainer();
+
         Engine::Window *main_window;
         Engine::Camera *camera;
         Engine::Render *render;
         ContainerLoading::ContainerLoader *loader;
-        bool pressed = false;
-        void check_input(GLfloat delta_time);
+        bool pressed;
     };
 }
 

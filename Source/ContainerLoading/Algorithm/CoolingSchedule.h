@@ -12,9 +12,9 @@ namespace ContainerLoading
         {
             typedef std::function< double (int) > CoolingSchedule;
 
-            CoolingSchedule LinearCooling = [](int k) -> double { return 1.0 / k; };
-            CoolingSchedule GeometricCooling = [](int k) -> double { return glm::pow(0.3, k); };
-            CoolingSchedule LogarithmicCooling = [](int k) -> double { return 1.0/(1 + glm::log(k)); };
+            CoolingSchedule LinearCooling = [](int k) -> double { return 500.0 / k; };
+            CoolingSchedule GeometricCooling = [](int k) -> double { return 500*glm::pow(0.3, k); };
+            CoolingSchedule LogarithmicCooling = [](int k) -> double { return 500.0/(1 + glm::log(k)); };
         }
     }
 }

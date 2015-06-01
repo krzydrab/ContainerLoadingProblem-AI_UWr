@@ -43,6 +43,9 @@ namespace ContainerLoading
 
     void ContainerLoader::applyAlgorithm(Algorithm::IAlgorithm* algorithm)
     {
+        if(_algorithm != nullptr)
+            delete _algorithm;
+
         _algorithm = algorithm;
     }
 }

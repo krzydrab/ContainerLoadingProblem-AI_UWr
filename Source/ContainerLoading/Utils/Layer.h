@@ -15,7 +15,7 @@ namespace ContainerLoading
             Layer(const Utils::Dimensions containerDimensions, const glm::vec3 layerPosition);
 
             bool tryPut(const Utils::Package& package);
-            Utils::Package takeRandomTopPackage();
+            Utils::Package takeTopPackage();
             std::vector<Utils::Package> getPackages() const;
             glm::float32 spaceFilledByPackages() const;
 

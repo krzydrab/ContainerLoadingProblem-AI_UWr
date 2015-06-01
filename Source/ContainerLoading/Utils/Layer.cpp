@@ -1,4 +1,5 @@
 #include "Layer.h"
+#include <iostream>
 
 namespace ContainerLoading
 {
@@ -29,18 +30,26 @@ namespace ContainerLoading
             return false;
         }
 
-        Utils::Package Layer::takeRandomTopPackage()
+        Utils::Package Layer::takeTopPackage()
         {
             std::vector<PackageIter> packages = getTopPackages();
-            PackageIter it = packages[rand() % packages.size()];
+            //PackageIter it = packages[rand() % packages.size()];
             PackageIter last = --_packages.end();
-            std::iter_swap(it, last);
+            //std::iter_swap(it, last);
 
             Utils::Package res = *last;
+            _packagesCapacity -= res.getDimensions().capacity();
             _packages.pop_back();
 
-            SectionIter section = _topSections.lower_bound(Section(res.getPosition().z - _position.z));
+            Section packageSection = Section(
+                res.getPosition().z - _position.z, 
+                res.getPosition().z - _position.z + res.getDimensions().length
+            );
             
+            SectionIter section = _topSections.begin();
+            while(!(section->left <= packageSection.left && section->right >= packageSection.right))
+                section++;
+
             removeFromSection(res, section);
             joinSectionsOfEqualHeights();
 

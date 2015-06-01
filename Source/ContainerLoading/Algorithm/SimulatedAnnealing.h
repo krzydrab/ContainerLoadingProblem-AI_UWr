@@ -11,7 +11,7 @@ namespace ContainerLoading
         class SimulatedAnnealing : public IAlgorithm
         {
         public:
-            SimulatedAnnealing(Utils::Container& container, std::vector<Utils::Package>& packages);
+            SimulatedAnnealing(Utils::Container& container, std::vector<Utils::Package>& packages, CoolingSchedule func = LinearCooling);
 
             virtual bool run(int steps);
 
@@ -19,6 +19,9 @@ namespace ContainerLoading
 
         private:
             void makeMove(const double temperature);
+            void takePakage(const double temperature, const float f1, Utils::Layer& layer);
+            void putPackage(Utils::Layer& layer);
+            double acceptanceFunc(const double temperature, const double f1, const double f2);
 
             CoolingSchedule _coolingSchedule;
             int _currentStep;

@@ -20,6 +20,8 @@ namespace ContainerLoading
             Dimensions getDimensions() const;
             glm::vec3 getPosition() const;
             glm::float32 getFreeSpace() const;
+            glm::float32 getFilledSpace() const;
+            unsigned countContainingPackages() const;
 
         private:
             std::vector<Layer> _layers;

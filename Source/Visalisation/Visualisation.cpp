@@ -2,6 +2,8 @@
 
 #include "../ContainerLoading/PackageGenerator.h"
 #include "../ContainerLoading/Algorithm/ConstructionAlgorithm.h"
+#include "../ContainerLoading/Algorithm/SimulatedAnnealing.h"
+#include "../ContainerLoading/Algorithm/CoolingSchedule.h"
 
 #include <iostream>
 
@@ -12,6 +14,9 @@ namespace Visualisation
 
     Visualisation::Visualisation()
     {
+        pressed = false;
+        loader = nullptr;
+
         try
         {
             main_window = new Engine::Window(1024, 768, "Container loading");
@@ -22,12 +27,8 @@ namespace Visualisation
             camera = new Engine::Camera(render->getProgramID());
             camera->init();
 
-            Container container(Dimensions(5, 4, 5), 1);
-            IPackageGenerator* generator = new PackageGenerator(container.getDimensions(), 5, 5);
-            loader = new ContainerLoader(container, generator);
-            Algorithm::IAlgorithm* alg = new Algorithm::ConstructionAlgorithm(loader->getContainer(), loader->getPackages());
-            loader->applyAlgorithm(alg);
-            //loader->run(5000);
+            initContainer();
+            loader->applyAlgorithm(new Algorithm::ConstructionAlgorithm(loader->getContainer(), loader->getPackages()));
         }
         catch (std::string s)
         {
@@ -68,16 +69,45 @@ namespace Visualisation
         }
     }
 
+    void Visualisation::initContainer()
+    {
+        Container container(Dimensions(5, 4, 5), 1);
+        IPackageGenerator* generator = new PackageGenerator(container.getDimensions(), 5, 5);
+
+        if(loader != nullptr)
+            delete loader;
+            
+        loader = new ContainerLoader(container, generator);
+
+        delete generator;
+    }
+
+    void Visualisation::printResulst() const
+    {
+        std::cout << "Space filled: " << loader->getContainer().getFilledSpace() 
+                  << "/" 
+                  << loader->getContainer().getDimensions().capacity() 
+                  << std::endl;
+
+        int packages = loader->getContainer().countContainingPackages();
+        std::cout << "Packages loaded: " << packages
+                  << "/"
+                  << loader->getPackages().size() + packages
+                  << std::endl;
+    }
+
     void Visualisation::check_input(GLfloat delta_time)
     {
         if (main_window->check1Key())
         {
-            //algo 1
+            initContainer();
+            loader->applyAlgorithm(new Algorithm::ConstructionAlgorithm(loader->getContainer(), loader->getPackages()));
         }
 
         if (main_window->check2Key())
         {
-            //algo 2
+            initContainer();
+            loader->applyAlgorithm(new Algorithm::SimulatedAnnealing(loader->getContainer(), loader->getPackages()));
         }
 
         if (main_window->check3Key())
@@ -89,12 +119,14 @@ namespace Visualisation
         {
             pressed = true;
             loader->singleStep();
+            printResulst();
         }
 
         if (main_window->checkDownKey() && !pressed)
         {
             pressed = true;
             loader->run(5000);
+            printResulst();
         }
 
         if (main_window->checkLeftKey())

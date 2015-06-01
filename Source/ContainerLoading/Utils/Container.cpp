@@ -34,6 +34,11 @@ namespace ContainerLoading
 
         glm::float32 Container::getFreeSpace() const
         {
+            return _dimensions.capacity() - getFilledSpace();
+        }
+
+        glm::float32 Container::getFilledSpace() const
+        {
             glm::float32 filledSpace = .0f;
 
             for(auto& layer : _layers)
@@ -41,7 +46,19 @@ namespace ContainerLoading
                 filledSpace += layer.spaceFilledByPackages();
             }
 
-            return _dimensions.capacity() - filledSpace;
+            return filledSpace;
+        }
+
+        unsigned Container::countContainingPackages() const
+        {
+            unsigned packages = 0;
+
+            for(auto& layer : _layers)
+            {
+                packages += layer.getPackages().size();
+            }
+
+            return packages;
         }
     }
 }
