@@ -38,6 +38,7 @@ namespace ContainerLoading
             if(layer.getPackages().size() == 0 || rand() % 2)
             {
                 putPackage(layer);
+                updateBestScores();            
             }
             else
             {
@@ -51,7 +52,9 @@ namespace ContainerLoading
             std::swap(p, _packages[_packages.size()-1]);
 
             if(layer.tryPut(_packages.back()))
+            {
                 _packages.pop_back();
+            }
         }
 
         void SimulatedAnnealing::takePakage(const double temperature, const float f1, Utils::Layer& layer)
@@ -75,6 +78,15 @@ namespace ContainerLoading
         void SimulatedAnnealing::setCoolingSchedule(CoolingSchedule func)
         {
             _coolingSchedule = func;
+        }
+
+        void SimulatedAnnealing::updateBestScores()
+        {
+            glm::float32 capacity = _container.getFilledSpace();
+            unsigned nbOfPackages = _container.countContainingPackages();
+
+            _bestLoadingCapacity = std::max(_bestLoadingCapacity, capacity);
+            _bestLoadingNbOfPackages = std::max(_bestLoadingNbOfPackages, nbOfPackages);
         }
     }
 }

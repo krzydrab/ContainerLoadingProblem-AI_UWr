@@ -72,8 +72,8 @@ namespace Visualisation
 
     void Visualisation::initContainer()
     {
-        Container container(Dimensions(5, 4, 5), 1);
-        IPackageGenerator* generator = new PackageGenerator(container.getDimensions(), 5, 5);
+        Container container(Dimensions(10, 4, 5), 1);
+        IPackageGenerator* generator = new PackageGenerator(container.getDimensions(), 10, 5);
 
         if(loader != nullptr)
             delete loader;
@@ -83,17 +83,22 @@ namespace Visualisation
         delete generator;
     }
 
-    void Visualisation::printResulst() const
+    void Visualisation::printResulst()
     {
+        glm::float32 capacity = loader->getContainer().getFilledSpace();
         std::cout << "Space filled: " << loader->getContainer().getFilledSpace() 
                   << "/" 
                   << loader->getContainer().getDimensions().capacity() 
+                  << "\t\t Best: " 
+                  << loader->getBestLoadingCapacity()
                   << std::endl;
 
-        int packages = loader->getContainer().countContainingPackages();
+        unsigned packages = loader->countLadedPackages();
         std::cout << "Packages loaded: " << packages
                   << "/"
-                  << loader->getPackages().size() + packages
+                  << loader->countUnloadedPackages() + packages
+                  << "\t\t\t Best: " 
+                  << loader->getBestLoadingNbOfPackages()
                   << std::endl;
     }
 

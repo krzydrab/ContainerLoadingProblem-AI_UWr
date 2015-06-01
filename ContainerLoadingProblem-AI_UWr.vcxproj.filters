@@ -137,9 +137,6 @@
     <ClInclude Include="Source\Visalisation\Engine\Shader.h">
       <Filter>Source Files\Visualization\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Visalisation\Engine\Visualisation.h">
-      <Filter>Source Files\Visualization\Engine</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Visalisation\Engine\Window.h">
       <Filter>Source Files\Visualization\Engine</Filter>
     </ClInclude>

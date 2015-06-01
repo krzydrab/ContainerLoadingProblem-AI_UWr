@@ -15,7 +15,7 @@ namespace Visualisation
         Visualisation();
         ~Visualisation();
         void start();
-        void printResulst() const;
+        void printResulst();
 
     private:
         void check_input(GLfloat delta_time);

@@ -19,6 +19,12 @@ namespace ContainerLoading
         bool run(int steps);
         bool singleStep();
 
+        unsigned countUnloadedPackages() const;
+        unsigned countLadedPackages() const;
+
+        glm::float32 getBestLoadingCapacity() const;
+        unsigned getBestLoadingNbOfPackages() const;
+
     private:
         Utils::Container _container;
         std::vector<Utils::Package> _packages;

@@ -22,6 +22,7 @@ namespace ContainerLoading
             void takePakage(const double temperature, const float f1, Utils::Layer& layer);
             void putPackage(Utils::Layer& layer);
             double acceptanceFunc(const double temperature, const double f1, const double f2);
+            void updateBestScores();
 
             CoolingSchedule _coolingSchedule;
             int _currentStep;

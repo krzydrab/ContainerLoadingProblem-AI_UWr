@@ -34,6 +34,8 @@ namespace ContainerLoading
             {
                 if(layers[i].tryPut(_packages.back()))
                 {
+                    _bestLoadingCapacity += _packages.back().getDimensions().capacity();
+                    _bestLoadingNbOfPackages++;
                     _packages.pop_back();
                     return true;
                 }

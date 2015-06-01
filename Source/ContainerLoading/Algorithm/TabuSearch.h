@@ -3,6 +3,8 @@
 
 #include "IAlgorithm.h"
 
+#include <list>
+
 namespace ContainerLoading
 {
     namespace Algorithm
@@ -13,9 +15,14 @@ namespace ContainerLoading
             TabuSearch(Utils::Container& container, std::vector<Utils::Package>& packages);
 
             virtual bool run(int steps);
+            unsigned countUnloadedPackages() const;
 
         private:
+            bool tryPutPackageInAnyLayer(std::vector<Utils::Layer>& layers);
+            void takePackage(std::vector<Utils::Layer>& layers);
+            void updateBestScores();
 
+            std::list<Utils::Package> _tabuList;
         };
     }
 }

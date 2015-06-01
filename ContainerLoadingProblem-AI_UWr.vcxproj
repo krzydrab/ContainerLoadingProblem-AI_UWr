@@ -114,7 +114,6 @@
     <ClInclude Include="Source\Visalisation\Engine\Camera.h" />
     <ClInclude Include="Source\Visalisation\Engine\Render.h" />
     <ClInclude Include="Source\Visalisation\Engine\Shader.h" />
-    <ClInclude Include="Source\Visalisation\Engine\Visualisation.h" />
     <ClInclude Include="Source\Visalisation\Engine\Window.h" />
     <ClInclude Include="Source\Visalisation\Model\Cube.h" />
     <ClInclude Include="Source\Visalisation\Visualisation.h" />
