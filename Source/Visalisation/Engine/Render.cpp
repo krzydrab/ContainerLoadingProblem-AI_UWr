@@ -189,9 +189,10 @@ namespace Visualisation
         {
             glm::vec3 position = container.getPosition();
             glm::vec3 scale = container.getDimensions().asVec3();
+            containerShiftVector = glm::vec3(-1 * scale.x / 2, 0.0f, -1 * scale.z / 2);
             glm::mat4 currentModel = camera->getModelMatrix();
 
-            glm::mat4 model = glm::translate(currentModel, position) * glm::scale(glm::mat4(1), scale);
+            glm::mat4 model = glm::translate(currentModel, position + containerShiftVector) * glm::scale(glm::mat4(1), scale);
 
             glm::vec3 color(0.0f, 0.0f, 1.0f);
 
@@ -214,7 +215,7 @@ namespace Visualisation
                     glm::vec3 color = package.getColor();
                     glm::mat4 currentModel = camera->getModelMatrix();
 
-                    glm::mat4 model =  glm::translate(currentModel, position) * glm::scale(glm::mat4(1), scale);
+                    glm::mat4 model =  glm::translate(currentModel, position + containerShiftVector) * glm::scale(glm::mat4(1), scale);
 
                     //glm::vec3 color((GLfloat)rand() / (RAND_MAX), (GLfloat)rand() / (RAND_MAX), (GLfloat)rand() / (RAND_MAX));
                     

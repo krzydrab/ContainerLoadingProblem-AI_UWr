@@ -90,6 +90,16 @@ namespace Visualisation
             return glfwGetKey(_window, GLFW_KEY_3);
         }
 
+        int Window::checkUpKey()
+        {
+            return glfwGetKey(_window, GLFW_KEY_UP);
+        }
+
+        int Window::checkDownKey()
+        {
+            return glfwGetKey(_window, GLFW_KEY_DOWN);
+        }
+
         int Window::checkLeftKey()
         {
             return glfwGetKey(_window, GLFW_KEY_LEFT);
@@ -99,5 +109,16 @@ namespace Visualisation
         {
             return glfwGetKey(_window, GLFW_KEY_RIGHT);
         }
+
+        int Window::check_add_key()
+        {
+            return glfwGetKey(_window, GLFW_KEY_EQUAL);
+        }
+
+        int Window::check_subtract_key()
+        {
+            return glfwGetKey(_window, GLFW_KEY_MINUS);
+        }
+
     }
 }

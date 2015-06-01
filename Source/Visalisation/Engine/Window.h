@@ -25,8 +25,12 @@ namespace Visualisation
             int check1Key();
             int check2Key();
             int check3Key();
+            int checkUpKey();
+            int checkDownKey();
             int checkLeftKey();
             int checkRightKey();
+            int check_add_key();
+            int check_subtract_key();
             
 
         private:

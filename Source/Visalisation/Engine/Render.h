@@ -32,6 +32,7 @@ namespace Visualisation
             GLuint normalbuffer;
             GLuint VertexArrayID;
             GLuint color_location;
+            glm::vec3 containerShiftVector;
 
             void fillBuffers();
             void bindBuffers();

@@ -21,7 +21,7 @@ namespace Visualisation
         Engine::Camera *camera;
         Engine::Render *render;
         ContainerLoading::ContainerLoader *loader;
-
+        bool pressed = false;
         void check_input(GLfloat delta_time);
     };
 }

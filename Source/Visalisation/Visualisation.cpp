@@ -27,7 +27,7 @@ namespace Visualisation
             loader = new ContainerLoader(container, generator);
             Algorithm::IAlgorithm* alg = new Algorithm::ConstructionAlgorithm(loader->getContainer(), loader->getPackages());
             loader->applyAlgorithm(alg);
-            loader->run(5000);
+            //loader->run(5000);
         }
         catch (std::string s)
         {
@@ -85,6 +85,18 @@ namespace Visualisation
             //algo 3
         }
 
+        if (main_window->checkUpKey() && !pressed)
+        {
+            pressed = true;
+            loader->singleStep();
+        }
+
+        if (main_window->checkDownKey() && !pressed)
+        {
+            pressed = true;
+            loader->run(5000);
+        }
+
         if (main_window->checkLeftKey())
         {
             camera->rotate_left(delta_time);
@@ -94,5 +106,18 @@ namespace Visualisation
         {
             camera->rotate_right(delta_time);
         }
+
+        if (main_window->check_add_key())
+        {
+            camera->zoom_in(delta_time);
+        }
+
+        if (main_window->check_subtract_key())
+        {
+            camera->zoom_out(delta_time);
+        }
+
+        if (!main_window->checkUpKey() && !main_window->checkDownKey())
+            pressed = false;
     }
 }

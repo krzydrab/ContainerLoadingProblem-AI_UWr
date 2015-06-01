@@ -16,7 +16,7 @@ namespace Visualisation
             horizontalAngle = 3.14f;
             verticalAngle = 0.0f;
             FoV = 45.0f;
-            zoom_per_second = 45.0f;
+            zoom_per_second = 1.0f;
             //speed = 5.0f;
             //speed = FoV * 0.25f;// / 2;
             //mouseSpeed = 0.0025f;
